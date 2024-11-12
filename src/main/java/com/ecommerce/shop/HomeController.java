@@ -4,10 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
 @Controller
-public class MainController {
+public class HomeController {
     @GetMapping("/")
     public String home(Model model){
-        model.addAttribute("message", "Ты на главной странице!!!");
-        return "home";
+        return "MainWindow";
     }
 }
