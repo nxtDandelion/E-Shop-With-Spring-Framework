@@ -25,141 +25,17 @@
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
+                <div class="col" th:each="game : ${games}">
                     <div class="card shadow-sm">
-                        <img src="/images/bg_3.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
+                        <img th:src="@{${game.imagePath}}" th:alt="${game.name}" class="card-img-top" style="height: 175px; object-fit: cover;">
                         <div class="card-body">
-                            <p class="card-text">Baldur's Gate 3 - это насыщенная сюжетом RPG, действие которой разворачивается во вселенной Dungeons & Dragons,
-                                где ваш выбор формирует историю о братстве и предательстве, выживании и самопожертвовании, а также соблазне абсолютной власти, к которой стремиться любой путешественник как вы.</p>
+                            <h5 class="card-title" th:text="${game.name}">Название игры</h5>
+                            <p class="card-text" th:text="${game.description}">Описание игры</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
+                                    <a th:href="@{'/games/' + ${game.id}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
                                 </div>
-                                <small class="text-body-secondary">2200 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/frostpunk.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Frostpunk - это игра на выживание в обществе. Как правитель последнего города на Земле, вы обязаны управлять как его жителями,
-                                так и инфраструктурой. Какие решения примете, чтобы обеспечить выживание своего общества? Что будете делать, когда окажетесь на грани срыва? Кем станете в процессе?</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">700 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/sons_of_the_forest.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Отправленный на поиски пропавшего миллиардера на отдаленный остров, вы оказываетесь в аду, кишащем каннибалами.
-                                Создавайте, созидайте и боритесь за выживание, в одиночку или с друзьями, в этом новом ужасающем симуляторе ужасов выживания в открытом мире.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">1100 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/elden_ring.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Получившая признание критиков фэнтезийная ролевая игра в жанре экшн. Восстаньте,
-                                запятнанные, и следуйте указаниям грейс, чтобы использовать силу Кольца Элденов и стать Лордом Элденов в Землях Между ними.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">1300 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/rdr2.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Red Dead Redemption 2 от создателей Grand Theft Auto V и Red Dead Redemption - это история о
-                                жизни в сердце дикой Америки. Огромный игровой мир также станет основой для принципиально нового сетевого режима.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">2400 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/subnautica.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Погрузитесь в глубины подводного мира, полного чудес и опасностей.
-                                Создавайте снаряжение, подводные лодки, чтобы исследовать пышные коралловые рифы,
-                                вулканы, системы пещер - и все это в попытке выжить.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">1100 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/wukong.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Black Myth: Wukong - это ролевая игра в жанре экшн, основанная на китайской
-                                мифологии. Вы отправитесь в путь как тот, кому суждено встретить испытания и чудеса, чтобы ра
-                                скрыть скрытую правду под покровом славной легенды.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">3600 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/house_of_ashes.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">В конце войны в Ираке спецназ, охотящийся за оружием массового поражения, обнаруживает нечто гораздо более смертоносное – погребенный шумерский храм, ъ
-                                в котором находится гнездо неземных существ. Чтобы пережить ночь внизу, они должны вступить в братство со своими врагами из верхнего мира.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">1250 руб.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="/images/dead_cells.jpg" class="card-img-top" alt="Sons Of The Forest" style="height: 175px; object-fit: cover;">
-                        <div class="card-body">
-                            <p class="card-text">Dead Cells - это рогалик в жанре экшн-платформера, вдохновленный metroidvania. Вы будете исследовать огромный, постоянно меняющийся замок... при условии, что сможете пробиться
-                                мимо его хранителей в 2D souls-lite бою. Контрольных точек нет. Убивай, умирай, учись, повторяй.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Посмотреть</button>
-                                </div>
-                                <small class="text-body-secondary">500 руб.</small>
+                                <small class="text-body-secondary" th:text="${game.price} + ' руб.'">Цена</small>
                             </div>
                         </div>
                     </div>
