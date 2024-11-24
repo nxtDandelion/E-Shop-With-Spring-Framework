@@ -33,7 +33,7 @@
                             <p class="card-text" th:text="${game.description}">Описание игры</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a th:href="@{'/games/' + ${game.id}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
+                                    <a th:href="@{'/gameid' + ${game.id}}" class="btn btn-sm btn-outline-secondary">Посмотреть</a>
                                 </div>
                                 <small class="text-body-secondary" th:text="${game.price} + ' руб.'">Цена</small>
                             </div>
@@ -49,7 +49,7 @@
 <footer class="text-body-secondary py-5">
     <div class="container">
         <p class="float-end mb-1">
-            <a href="#">Back to top</a>
+            <a href="#">Вернуться в начало</a>
         </p>
     </div>
 </footer>
